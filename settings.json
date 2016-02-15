@@ -1,0 +1,8 @@
+{
+  "public": {
+    "CLOUDINARY_API_KEY": "229253699112559",
+    "CLOUDINARY_CLOUD_NAME": "fluxcloud"
+  },
+
+  "CLOUDINARY_API_SECRET": "VpvC8bxnAw6JJfnIPprncKBBVuo"
+}

@@ -1,0 +1,44 @@
+<template name="navbar">
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper light-green darken-4">
+				<a href="#!" class="brand-logo center waves-effect waves-light"><i class="material-icons left">speaker_notes</i>BLIPPER</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+				{{#if currentUser}}
+					<ul class="left">
+						<li><a class="waves-effect waves-light" href="profile">{{email}}</a></li>
+					</ul>
+				{{/if}}
+
+				<ul class="right hide-on-med-and-down">
+					<li><a class="waves-effect waves-light" href="/">Home</a></li>
+					<li><a class="waves-effect waves-light" href="about">About</a></li>
+					{{#if currentUser}}
+						<li><a class="waves-effect waves-light" href="{{pathFor 'posts'}}">Posts</a></li>
+					{{/if}}
+					{{#if currentUser}}
+						<li><a class="waves-effect waves-light" href="profile">Edit Profile</a></li>
+						<li><a class="waves-effect waves-light" id="logout" href="/">Sign Out</a></li>
+					{{else}}
+						<li><a class="waves-effect waves-light" href="sign-in">Sign In</a></li>
+						<li><a class="waves-effect waves-light" href="sign-up">Sign Up</a></li>
+					{{/if}}
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a class="waves-effect waves-light" href="/">Home</a></li>
+					<li><a class="waves-effect waves-light" href="about">About</a></li>
+					{{#if currentUser}}
+						<li><a class="waves-effect waves-light" href="{{pathFor 'posts'}}">Posts</a></li>
+					{{/if}}
+					{{#if currentUser}}
+						<li><a class="waves-effect waves-light" href="profile">Edit Profile</a></li>
+						<li><a class="waves-effect waves-light" id="logout" href="/">Sign Out</a></li>
+					{{else}}
+						<li><a class="waves-effect waves-light" href="sign-in">Sign In</a></li>
+						<li><a class="waves-effect waves-light" href="sign-up">Sign Up</a></li>
+					{{/if}}
+				</ul>
+			</div>
+		</nav>
+	</div>
+</template>

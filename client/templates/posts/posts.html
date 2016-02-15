@@ -1,0 +1,44 @@
+<template name="posts">
+	{{#if currentUser}}
+		<!-- Modal Trigger -->
+		<a class="waves-effect waves-light btn modal-trigger" href="#modal1">BLIP Something!</a>
+	{{/if}}
+	<!-- Modal Structure -->
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<h4>BLIP what's on your mind...</h4>
+			{{#autoForm collection="Posts" id="insertBlipForm" type="insert"}}
+				{{> afQuickField class="materialize-textarea" name="body" rows=8 autofocus=autofocus}}
+					<div class="modal-footer">
+						<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+							<button class="btn waves-effect waves-light" type="submit">Blip It
+								<i class="material-icons right">send</i>
+							</button>
+					</div>
+			{{/autoForm}}
+		</div>
+	</div>
+	<br />
+	<br />
+	<!--<hr>-->
+
+	{{#each posts}}
+		<div class="row post z-depth-2">
+			{{#with detailsDb}}
+			<div class="col s1">
+				<img class="post-image circle" src="{{avatar}}">
+			</div>
+			{{/with}}
+			<div class="col s11">
+				<small class="post-meta">Posted By {{name}} - {{timeAgo createdAt}}</small>
+				<blockquote class="post-body">
+					{{body}}
+				</blockquote>
+			</div>
+		</div>
+	{{else}}
+		<p>
+			No Posts Yet
+		</p>
+	{{/each}}
+</template>
