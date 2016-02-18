@@ -1,9 +1,14 @@
 Router.configure({
-	layoutTemplate: 'layout'
+	layoutTemplate: "layout"
 });
 
-Router.route('/', {
-	template: 'home'
+//Router.configure({
+	//layoutTemplate: "homeLayout"
+//});
+
+Router.route('/', function() {
+	this.render('home');
+	this.layout('homeLayout');
 });
 
 Router.route('/about');

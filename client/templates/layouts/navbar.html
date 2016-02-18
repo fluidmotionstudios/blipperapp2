@@ -11,8 +11,6 @@
 				{{/if}}
 
 				<ul class="right hide-on-med-and-down">
-					<li><a class="waves-effect waves-light" href="/">Home</a></li>
-					<li><a class="waves-effect waves-light" href="about">About</a></li>
 					{{#if currentUser}}
 						<li><a class="waves-effect waves-light" href="{{pathFor 'posts'}}">Posts</a></li>
 					{{/if}}
@@ -20,6 +18,8 @@
 						<li><a class="waves-effect waves-light" href="profile">Edit Profile</a></li>
 						<li><a class="waves-effect waves-light" id="logout" href="/">Sign Out</a></li>
 					{{else}}
+						<li><a class="waves-effect waves-light" href="/">Home</a></li>
+						<li><a class="waves-effect waves-light" href="about">About</a></li>
 						<li><a class="waves-effect waves-light" href="sign-in">Sign In</a></li>
 						<li><a class="waves-effect waves-light" href="sign-up">Sign Up</a></li>
 					{{/if}}
